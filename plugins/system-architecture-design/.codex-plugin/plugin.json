@@ -1,0 +1,22 @@
+{
+  "name": "system-architecture-design",
+  "version": "0.1.0",
+  "description": "System and application architecture design skills for Codex.",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "System Architecture Design",
+    "shortDescription": "Design maintainable application and system boundaries.",
+    "longDescription": "Provides app architecture, backend architecture, and UNIX design-principle skills for designing and reviewing maintainable systems.",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "この機能のアーキテクチャを設計してください。",
+      "このバックエンド設計をレビューしてください。",
+      "UNIX設計原則でシステム境界を評価してください。"
+    ]
+  }
+}
