@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git Branch Workflow"
+  short_description: "Create and manage Git branches safely"
+  default_prompt: "最新のリモート既定ブランチから作業ブランチを作成してください。"

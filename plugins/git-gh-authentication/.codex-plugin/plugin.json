@@ -1,21 +1,22 @@
 {
   "name": "git-gh-authentication",
-  "version": "0.1.0",
-  "description": "Authenticate Git and GitHub CLI safely for repository workflows.",
+  "version": "0.1.0+codex.20260815055613",
+  "description": "Guide Git branches, GitHub CLI authentication, and pull-request workflows safely.",
   "author": {
     "name": "Beyond Labo"
   },
   "skills": "./skills/",
   "interface": {
-    "displayName": "Git & GitHub CLI Authentication",
-    "shortDescription": "Authenticate GitHub CLI safely for Git workflows.",
-    "longDescription": "Guides GitHub CLI status checks, device authentication, and post-authentication verification while keeping credentials and SSH-key changes safe.",
+    "displayName": "Git & GitHub Workflow",
+    "shortDescription": "Manage branches, GitHub CLI auth, and pull requests safely.",
+    "longDescription": "Provides separate skills for Git branch workflows, GitHub CLI authentication, and pull-request publication while protecting uncommitted work and credentials.",
     "developerName": "Beyond Labo",
     "category": "DeveloperTools",
     "capabilities": [],
     "defaultPrompt": [
-      "gh の認証状態を確認し、必要ならデバイス認証を進めてください。",
-      "GitHub CLI の認証エラーを安全に解決してください。"
+      "gh \u306e\u8a8d\u8a3c\u72b6\u614b\u3092\u78ba\u8a8d\u3057\u3001\u5fc5\u8981\u306a\u3089\u30c7\u30d0\u30a4\u30b9\u8a8d\u8a3c\u3092\u9032\u3081\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u6700\u65b0\u306e\u30ea\u30e2\u30fc\u30c8\u65e2\u5b9a\u30d6\u30e9\u30f3\u30c1\u304b\u3089\u4f5c\u696d\u30d6\u30e9\u30f3\u30c1\u3092\u4f5c\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+      "\u5909\u66f4\u3092\u78ba\u8a8d\u3057\u3066\u3001\u30b3\u30df\u30c3\u30c8\u3001push\u3001\u30c9\u30e9\u30d5\u30c8PR\u4f5c\u6210\u307e\u3067\u9032\u3081\u3066\u304f\u3060\u3055\u3044\u3002"
     ]
   }
 }
