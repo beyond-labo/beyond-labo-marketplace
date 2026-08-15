@@ -1,0 +1,21 @@
+{
+  "name": "git-gh-authentication",
+  "version": "0.1.0",
+  "description": "Authenticate Git and GitHub CLI safely for repository workflows.",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Git & GitHub CLI Authentication",
+    "shortDescription": "Authenticate GitHub CLI safely for Git workflows.",
+    "longDescription": "Guides GitHub CLI status checks, device authentication, and post-authentication verification while keeping credentials and SSH-key changes safe.",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "gh の認証状態を確認し、必要ならデバイス認証を進めてください。",
+      "GitHub CLI の認証エラーを安全に解決してください。"
+    ]
+  }
+}
