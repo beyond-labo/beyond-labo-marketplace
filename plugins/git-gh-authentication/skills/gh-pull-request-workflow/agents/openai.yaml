@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Pull Request Workflow"
+  short_description: "Publish commits and create GitHub pull requests"
+  default_prompt: "この変更を確認して、コミット、push、ドラフトPR作成まで進めてください。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Git and GitHub CLI Authentication"
+  short_description: "Authenticate GitHub CLI safely for Git workflows"
+  default_prompt: "GitHub CLI の認証を確認し、必要ならデバイス認証を進めてください。"
