@@ -8,39 +8,24 @@
   <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav shell" aria-label="主要ナビゲーション">
-      <a class="brand" href="./">Beyond Labo Marketplace</a>
-      <div class="nav-links"><a href="#plugins">プラグイン</a><a href="#skills">SKILL</a><a href="install.html">導入ガイド</a></div>
-    </nav>
-  </header>
-  <section class="hero">
-    <div class="shell">
-      <p class="eyebrow">Codex plugin marketplace</p>
-      <h1>迷いを減らし、<br>仕事を前に進める SKILL。</h1>
-      <p class="hero-copy">設計、GitHub ワークフロー、日本語ライティング。日々の判断に再利用できる作業規範を、Codex プラグインとしてまとめています。</p>
-      <div class="actions"><a class="button" href="install.html">Codex に追加する</a><a class="button secondary" href="#plugins">プラグインを見る</a></div>
+  <header class="site-header"><nav class="nav shell" aria-label="主要ナビゲーション"><a class="brand" href="./">Beyond Labo <span>Marketplace</span></a><div class="nav-links"><a href="#catalog">プラグイン</a><a href="#skills">SKILL</a><a href="install.html">導入ガイド</a></div></nav></header>
+  <main>
+    <section class="hero"><div class="shell hero-layout"><div><p class="eyebrow">Codex plugin marketplace</p><h1>判断の型を、<br>チームの道具に。</h1><p class="hero-copy">設計、GitHub ワークフロー、日本語ライティング。再利用できる作業規範を、目的ごとのプラグインとして提供しています。</p><div class="actions"><a class="button" href="install.html">Codex に追加する</a><a class="button secondary" href="#catalog">カタログを見る</a></div></div><aside class="hero-summary" aria-label="マーケットプレイスの概要"><p>MARKETPLACE AT A GLANCE</p><dl><div><dt>プラグイン</dt><dd>3</dd></div><div><dt>SKILL</dt><dd>8</dd></div><div><dt>追加認証</dt><dd>不要</dd></div></dl><span>導入後は新しいタスクで利用できます</span></aside></div></section>
+    <div class="shell page-content">
+      <section class="section intro" aria-labelledby="choose-heading"><div class="section-heading"><p class="eyebrow">How to choose</p><h2 id="choose-heading">まず、目的に近いプラグインを選ぶ</h2><p>プラグインは導入単位です。その中に、具体的な作業を導く複数の SKILL が入っています。下の表で、対象領域と含まれる SKILL をまとめて確認できます。</p></div><ol class="decision-steps"><li><strong>目的を選ぶ</strong><span>設計、GitHub、文章から探す</span></li><li><strong>プラグインを追加する</strong><span>Codex の「個人用」から導入</span></li><li><strong>SKILL を呼び出す</strong><span>新しいタスクで依頼する</span></li></ol></section>
+      <section class="section" id="catalog" aria-labelledby="catalog-heading"><div class="section-heading"><p class="eyebrow">Plugin catalog</p><h2 id="catalog-heading">プラグイン一覧</h2><p>バージョン、カテゴリ、含まれる SKILL、認証要件を比較できます。</p></div><div class="table-wrap" tabindex="0"><table class="catalog-table"><caption>Beyond Labo Marketplace のプラグイン</caption><thead><tr><th scope="col">プラグイン</th><th scope="col">用途</th><th scope="col">含まれる SKILL</th><th scope="col">利用条件</th></tr></thead><tbody>
+        <tr><td><a class="table-title" href="plugins/system-architecture-design.md">System Architecture Design</a><small><code>system-architecture-design</code> · v0.1.0</small></td><td>アプリケーションとバックエンドの境界、依存関係、責務分割の設計・レビュー。</td><td><ul><li>App Architecture Design</li><li>Backend Architecture Design</li><li>UNIX Design Principles</li></ul></td><td><span class="badge blue">DeveloperTools</span><span class="condition">認証不要</span></td></tr>
+        <tr><td><a class="table-title" href="plugins/git-gh-authentication.md">Git &amp; GitHub Workflow</a><small><code>git-gh-authentication</code> · v0.1.0+codex.20260823010857</small></td><td>ブランチ、GitHub CLI 認証、プルリクエスト作成を安全に進める。</td><td><ul><li>Git &amp; GitHub CLI Authentication</li><li>Git Branch Workflow</li><li>GitHub Pull Request Workflow</li></ul></td><td><span class="badge violet">DeveloperTools</span><span class="condition">認証不要<small>※ GitHub 操作時は別途必要</small></span></td></tr>
+        <tr><td><a class="table-title" href="plugins/communication-writing.md">対話・コミュニケーション</a><small><code>communication-writing</code> · v0.1.0</small></td><td>日本語の技術文書と、説明文としての読み進めやすさを整える。</td><td><ul><li>japanese-tech-writing</li><li>cognitive-rhythm-writing</li></ul></td><td><span class="badge green">Productivity</span><span class="condition">認証不要</span></td></tr>
+      </tbody></table></div></section>
+      <section class="section install-callout" aria-labelledby="install-heading"><div><p class="eyebrow">Get started</p><h2 id="install-heading">導入は一度だけ</h2><p>マーケットプレイスを Codex に追加したら、「個人用」タブから必要なプラグインを選べます。</p></div><div class="install-actions"><a class="button" href="install.html">画面で追加する</a><code>codex plugin add &lt;plugin-name&gt;@personal</code></div></section>
+      <section class="section" id="skills" aria-labelledby="skills-heading"><div class="section-heading"><p class="eyebrow">Skill directory</p><h2 id="skills-heading">SKILL の役割から探す</h2><p>SKILL は、依頼の組み立て方と出力の判断基準を Codex に与えます。目的に合う名前を使って呼び出してください。</p></div><div class="table-wrap" tabindex="0"><table class="skill-table"><caption>プラグインに含まれる SKILL</caption><thead><tr><th scope="col">領域</th><th scope="col">SKILL</th><th scope="col">使うとき</th><th scope="col">詳細</th></tr></thead><tbody>
+        <tr><th scope="rowgroup" rowspan="3">System Architecture Design</th><td>App Architecture Design</td><td>画面、UI 状態、ナビゲーション、機能境界を設計するとき</td><td><a href="skills/app-architecture-design.md">開く</a></td></tr><tr><td>Backend Architecture Design</td><td>API、サービス、データ、外部依存の境界を設計するとき</td><td><a href="skills/backend-architecture-design.md">開く</a></td></tr><tr><td>UNIX Design Principles</td><td>責務分割、契約、可観測性、分割粒度を評価するとき</td><td><a href="skills/unix-design-principles.md">開く</a></td></tr>
+        <tr><th scope="rowgroup" rowspan="3">Git &amp; GitHub Workflow</th><td>Git &amp; GitHub CLI Authentication</td><td><code>gh</code> の認証切れ・デバイス認証を安全に復旧するとき</td><td><a href="skills/git-gh-authentication.md">開く</a></td></tr><tr><td>Git Branch Workflow</td><td>既定ブランチを起点に作業ブランチを安全に扱うとき</td><td><a href="skills/git-branch-workflow.md">開く</a></td></tr><tr><td>GitHub Pull Request Workflow</td><td>選択した変更をコミット、push、PR 作成するとき</td><td><a href="skills/gh-pull-request-workflow.md">開く</a></td></tr>
+        <tr><th scope="rowgroup" rowspan="2">対話・コミュニケーション</th><td>japanese-tech-writing</td><td>日本語の技術文書を正確で読みやすく推敲するとき</td><td><a href="skills/japanese-tech-writing.md">開く</a></td></tr><tr><td>cognitive-rhythm-writing</td><td>正しいが単調な説明文に、読み進める推進力を作るとき</td><td><a href="skills/cognitive-rhythm-writing.md">開く</a></td></tr>
+      </tbody></table></div></section>
+      <section class="section boundary" aria-labelledby="boundary-heading"><div><p class="eyebrow">Boundary</p><h2 id="boundary-heading">プラグインが行うこと、行わないこと</h2></div><div><p>プラグインは判断の規範と手順を提供します。GitHub への push、PR 作成、認証などの外部変更は、利用者からの明示的な依頼がある場合にだけ実行します。</p><a href="plugins/git-gh-authentication.md">Git &amp; GitHub Workflow の安全な扱いを見る →</a></div></section>
     </div>
-  </section>
-  <main class="shell">
-    <section class="section" aria-label="マーケットプレイスの概要">
-      <div class="stat-grid"><div class="stat"><strong>3</strong><span>導入できるプラグイン</span></div><div class="stat"><strong>8</strong><span>専門化した SKILL</span></div><div class="stat"><strong>0</strong><span>プラグイン利用時の追加認証</span></div></div>
-    </section>
-    <section class="section" id="plugins">
-      <div class="section-heading"><p class="eyebrow">Plugins</p><h2>目的から選ぶ</h2><p>導入単位はプラグイン、実際の作業を導くのは個別の SKILL です。必要な領域だけを追加できます。</p></div>
-      <div class="card-grid">
-        <article class="card"><span class="card-tag">Developer tools</span><h3>System Architecture Design</h3><p>アプリとバックエンドの責務、依存方向、安定した境界を設計・レビューします。</p><a href="plugins/system-architecture-design.md">詳細を見る →</a></article>
-        <article class="card"><span class="card-tag">Developer tools</span><h3>Git &amp; GitHub Workflow</h3><p>ブランチ、CLI 認証、プルリクエスト作成を、安全な外部変更の境界とともに進めます。</p><a href="plugins/git-gh-authentication.md">詳細を見る →</a></article>
-        <article class="card"><span class="card-tag">Productivity</span><h3>対話・コミュニケーション</h3><p>日本語の技術文書の正確さと、説明文としての読み進めやすさを整えます。</p><a href="plugins/communication-writing.md">詳細を見る →</a></article>
-      </div>
-    </section>
-    <section class="section"><div class="install-panel"><div><p class="eyebrow">Get started</p><h2>最初のプラグインを追加する</h2><p>アプリからの操作手順と、コマンドで追加する場合の流れをまとめています。</p></div><a class="button" href="install.html">導入ガイドへ</a></div></section>
-    <section class="section" id="skills">
-      <div class="section-heading"><p class="eyebrow">Skills</p><h2>すぐに使える 8 つの規範</h2><p>各ページには、使いどころ、前提条件、コピーして使えるプロンプト例を掲載しています。</p></div>
-      <div class="skill-list">
-        <a href="skills/app-architecture-design.md">App Architecture Design</a><a href="skills/backend-architecture-design.md">Backend Architecture Design</a><a href="skills/unix-design-principles.md">UNIX Design Principles</a><a href="skills/git-gh-authentication.md">Git &amp; GitHub CLI Authentication</a><a href="skills/git-branch-workflow.md">Git Branch Workflow</a><a href="skills/gh-pull-request-workflow.md">GitHub Pull Request Workflow</a><a href="skills/japanese-tech-writing.md">japanese-tech-writing</a><a href="skills/cognitive-rhythm-writing.md">cognitive-rhythm-writing</a>
-      </div>
-    </section>
   </main>
   <footer class="footer"><div class="footer-inner shell"><span>Beyond Labo Marketplace</span><a href="https://github.com/beyond-labo/beyond-labo-marketplace">GitHub リポジトリ</a></div></footer>
 </body>
