@@ -1,5 +1,5 @@
 # beyond-labo Marketplace
 
-Beyond Labo が提供する Codex プラグインとスキルのマーケットプレイスです。
+Beyond Labo が提供する Codex プラグインと SKILL のマーケットプレイスです。
 
-今後、このリポジトリでプラグインとスキルを管理し、GitHub Pages で使い方とプロンプト例を公開します。
+利用方法とプロンプト例は [GitHub Pages の紹介サイト](docs/index.md) を参照してください。
