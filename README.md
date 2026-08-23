@@ -4,6 +4,12 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 
 各プラグインの目的とプロンプト例は、[プラグインガイド](https://beyond-labo.github.io/beyond-labo-marketplace/) で公開しています。
 
+## プラグイン一覧
+
+- [System Architecture Design](docs/plugins/system-architecture-design.md)：アプリケーションとシステムのアーキテクチャを設計・レビューします。
+- [Git & GitHub Workflow](docs/plugins/git-gh-authentication.md)：ブランチ操作、GitHub CLI 認証、PR 作成を安全に進めます。
+- [対話・コミュニケーション](docs/plugins/communication-writing.md)：日本語の技術文書と説明文を推敲します。
+
 ## インストール
 
 Codex アプリの画面からマーケットプレイスを追加する手順は、[インストールガイド](docs/install.md) を参照してください。

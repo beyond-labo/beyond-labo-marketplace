@@ -6,14 +6,6 @@
 
 Codex アプリへサインインし、インターネットへ接続できる状態にします。
 
-マーケットプレイスの追加画面には、次の値を入力します。
-
-- **ソース**：`https://github.com/beyond-labo/beyond-labo-marketplace.git`
-- **Git ref**：`main`
-- **スパースパス**：空欄
-
-SSH の設定を済ませている場合は、ソースに SSH URL を指定してもかまいません。
-
 ## プラグイン画面を開く
 
 Codex アプリの左側メニューから「プラグイン」を選択します。
@@ -28,17 +20,19 @@ Codex アプリの左側メニューから「プラグイン」を選択しま�
 
 ## リポジトリを指定する
 
-「ソース」に GitHub の URL を入力します。
+マーケットプレイスの追加画面には、次の値を入力します。
 
-「Git ref」には `main` を入力します。
+- **ソース**：`https://github.com/beyond-labo/beyond-labo-marketplace.git`
+- **Git ref**：`main`
+- **スパースパス**：空欄
 
-「スパースパス」は空欄のままにします。
+SSH の設定を済ませている場合は、ソースに SSH URL を指定してもかまいません。
 
 入力後に「マーケットプレイスを追加」を選択します。
 
-画像では SSH URL を指定しています。
+画像は SSH URL を指定した例です。
 
-SSH 認証を設定していない場合は、手順の冒頭に示した HTTPS URL を入力します。
+SSH 認証を設定していない場合は、上記の HTTPS URL を入力します。
 
 ![ソースと Git ref を入力する画面](/beyond-labo-marketplace/assets/install/configure-marketplace.png)
 
