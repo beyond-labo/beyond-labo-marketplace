@@ -13,6 +13,8 @@
 │   ├── .mcp.json                      # MCP を提供する場合だけ作成する接続設定
 │   └── skills/<skill-name>/SKILL.md  # SKILL 本体
 └── docs/                             # GitHub Pages として公開する静的サイト
+    ├── index.html                    # 公開トップページの正本
+    └── assets/site.css               # 公開ページ共通のスタイル
 ```
 
 - プラグイン名とフォルダ名、`.codex-plugin/plugin.json` の `name` は、64 文字以内の kebab-case で一致させる。
@@ -84,7 +86,7 @@ MCP は外部サービスまたはローカルプロセスとの接続がプラ�
 
 プラグインまたは SKILL に変更を加えたら、同じ変更で次を行う。
 
-1. `docs/index.md` の一覧、カテゴリ、リンクを更新する。
+1. `docs/index.html` の一覧、カテゴリ、リンクを更新する。
 2. `docs/plugins/<plugin-name>.md` と `docs/skills/<skill-name>.md` を追加または更新する。
 3. 各 SKILL ページに、いつ使うか、前提条件、コピー可能なプロンプト例を最低一つ記載する。
 4. プラグインと SKILL の正本（manifest / `SKILL.md`）と、ページ内の名前、説明、バージョン、導入コマンド、リンクを突き合わせる。
