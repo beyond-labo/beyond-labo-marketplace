@@ -51,6 +51,18 @@ git push -u origin <branch>
 
 Create a PR only with explicit user authorization. Determine the base from an explicit user request or the remote default branch; do not assume it. Default to a draft PR unless the user asks for review-ready status.
 
+### PR language
+
+Write the PR title and body in the language the user requests.
+
+When the user does not specify a language, infer it from the request and the repository's user-facing documentation.
+
+Do not default to English merely because Git, GitHub CLI, branch names, code identifiers, or commands use English.
+
+Keep commands, file paths, code identifiers, and GitHub API fields unchanged.
+
+Apply the same rule when updating an existing PR.
+
 Write a Markdown body to a temporary file. Include the change summary, impact on existing contracts, validation actually run, and review focus. Do not embed Markdown directly in the shell command.
 
 ```bash
