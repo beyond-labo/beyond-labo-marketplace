@@ -63,6 +63,24 @@ Keep commands, file paths, code identifiers, and GitHub API fields unchanged.
 
 Apply the same rule when updating an existing PR.
 
+### Japanese PR body template
+
+When creating a Japanese PR, start from [PULL_REQUEST_TEMPLATE_JA.md](assets/PULL_REQUEST_TEMPLATE_JA.md).
+
+Use a Japanese title that states both the changed target and the change itself.
+
+Avoid generic titles such as `update` or `fix` when they do not identify the review scope.
+
+Replace every placeholder with the actual change details, remove sections that do not apply, and list only validation that was actually run.
+
+In `概要`, state what changed, why it changed, and whether external contracts change.
+
+In `主な対応内容`, describe each substantial change as a concrete noun phrase rather than a completion report.
+
+In `既存契約への影響`, name affected APIs, user flows, configuration, CI, or compatibility, and state explicitly when there is no impact.
+
+Use `レビュー時に見てほしい点` for design decisions and compatibility risks that require reviewer attention.
+
 Write a Markdown body to a temporary file. Include the change summary, impact on existing contracts, validation actually run, and review focus. Do not embed Markdown directly in the shell command.
 
 ```bash
