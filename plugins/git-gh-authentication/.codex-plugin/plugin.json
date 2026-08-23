@@ -1,6 +1,6 @@
 {
   "name": "git-gh-authentication",
-  "version": "0.1.0+codex.20260815055613",
+  "version": "0.1.0+codex.20260823010857",
   "description": "Guide Git branches, GitHub CLI authentication, and pull-request workflows safely.",
   "author": {
     "name": "Beyond Labo"

@@ -1,0 +1,15 @@
+{
+  "name": "communication-writing",
+  "version": "0.1.0",
+  "description": "日本語の技術文書と説明文の認知リズムを整える SKILL 集",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "対話・コミュニケーション",
+    "shortDescription": "日本語の技術文書と説明文を推敲する",
+    "longDescription": "日本語の技術文書を厳密に整える規範と、説明文に認知の緩急を設計する規範を提供します。",
+    "developerName": "Beyond Labo",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "日本語の技術文書を推敲してください。"
+  }
+}
