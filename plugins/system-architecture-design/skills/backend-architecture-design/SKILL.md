@@ -1,63 +1,61 @@
 ---
 name: backend-architecture-design
-description: Design or review backend architecture for a new feature, API, service, or refactor. Use for feature-first package boundaries, Clean Architecture or layered architecture, dependency direction, ports and adapters, naming, shared-kernel decisions, and architecture sections of specifications.
+description: Design or review server feature ownership, HTTP and persistence boundaries, use cases, ports, dependency direction, and public API contracts. Use for backend architecture and layer naming decisions; use app-architecture-design for client UI boundaries and unix-design-principles for system decomposition tradeoffs.
 ---
 
 # Backend Architecture Design
 
-Design a backend so that its feature ownership, dependency direction, and operational boundaries remain clear as it evolves.
+Backend の機能、公開契約、データと外部作用の所有者を決める。
+実装前に既存コードとローカルの決定記録を読み、[共通の配置、責務、契約](../../references/architecture-boundaries.md)を適用する。
 
-## Workflow
+## 依存方向と責務
 
-1. Read the repository's local architecture, package, and specification guidance before proposing a structure. Treat local rules as more specific than this skill.
-2. Identify the smallest feature that can change and be tested independently. Make its public contract, owned data, use cases, and external dependencies explicit.
-3. Use the feature as the package root. Keep its layers inside the feature rather than distributing new code by technical type across the service.
-4. Place each component by its dependency and responsibility, then select a name and role directory that reveal both.
-5. Record the feature boundary, layer/role placement, cross-feature contracts, and intentional exceptions in the design or specification.
-6. Review imports, ownership, tests, and public contracts before implementation.
+Domain は業務モデルと不変条件、Application は UseCase と業務処理の調整を所有する。
+Port は呼び出し側の内側に定義し、通常は `Application/Port`、業務概念自体が必要とする場合は `Domain/Port` とする。
+HTTP フレームワーク、DB ドライバー、SDK、公開 DTO を内側へ import しない。
 
-## Boundaries and dependency direction
-
-Use these conceptual layers when they fit the system:
-
-| Layer | Owns | May depend on |
-| --- | --- | --- |
-| Domain | business concepts, invariants, policies, value types, ports | no delivery framework or external SDK |
-| Application | use cases and orchestration | domain abstractions |
-| Infrastructure | databases, messaging, SDKs, providers, port implementations | domain contracts |
-| Presentation | transport validation, handlers/routes, response projection | application APIs |
-| Composition | dependency wiring | all layers; no business rules |
-
-Keep imports flowing toward stable abstractions: `presentation -> application -> domain` and `infrastructure -> domain`. Let composition wire concrete infrastructure to ports. Do not make a domain or application component import a transport framework, database driver, provider SDK, or a feature's presentation code.
-
-Use an explicit contract when features or services communicate. Do not import another feature's infrastructure or presentation implementation.
-
-Move code into a shared kernel only when it is a stable, owned domain contract used by multiple features. Do not create `common`, `shared`, `lib`, or utility dumping grounds for convenience.
-
-## Package and naming design
-
-For new feature work, prefer this shape and omit only layers that have no responsibility:
+受信境界は認証情報の取り出し、入力形式の検証、UseCase 呼び出し、結果とエラーの HTTP 応答への変換を所有する。
+業務上の認可判断や不変条件は UseCase / Domain に残す。
+送信境界は Port を実装して DB や外部 API に接続し、外部形式と内側のモデルを変換する。
+Composition が接続の設定と具体的実装を組み立てる。
 
 ```text
-src/<feature-name>/<layer-name>/<role-name>/
+静的依存:
+受信境界 → Application → Domain
+送信境界 → Application / Domain の Port
+Composition → 必要な各実装
+
+実行:
+HTTP Handler → UseCase → Port の実装 → DB / 外部 API
 ```
 
-Use role directories that match the component's responsibility, such as `entities`, `policies`, `ports`, `use-cases`, `orchestrators`, `adapters`, `repositories`, `routes`, `handlers`, or `projectors`. Place composition code in a role directory too: use `composition/factories/` for object graphs and `composition/registrars/` for registration-only wiring.
+## Backend の外側に付ける名前
 
-Use names that expose the layer and role: `*Policy`, `*Port`, `*UseCase`, `*Orchestrator`, `*Adapter`, `*Repository`, `*Provider`, `*Route`, `*Handler`, `*Mapper`, and `*Projector`. Reserve `*Emitter` for a component that actually pushes to an external channel. Avoid catch-all names such as `Manager`, `Helper`, `Util`, and generic `Processor`.
+Clean Architecture 原典の Interface Adapters は Controller / Presenter と外部データ変換を含む領域である。
+Presentation は原典の層名ではない。
+次の候補を対象プロジェクトの語彙と既存責務に合わせて比較し、一つを唯一の正解として強制しない。
 
-Use a role directory even when it initially contains one component, unless the design documents why an exception improves discoverability. This applies to composition as well as the four architectural layers. Do not move existing code solely to conform; give a migration its own approved refactoring scope.
+| 候補 | 受信境界 | 送信境界 | 判断点 |
+| --- | --- | --- | --- |
+| Presentation / Infrastructure | `Hosting/Presentation/Handler` | `Hosting/Infrastructure/Repository` | 既存規約で Presentation が HTTP 入出力を意味するなら維持できる。UI 専用語と誤解されない説明が必要 |
+| Adapter に集約 | `Hosting/Adapter/Inbound/Handler` | `Hosting/Adapter/Outbound/Repository` | 入力と出力を明示する。Inbound / Outbound は方向を表す区分で、別の業務層ではない |
 
-## Design checks
+後者で Infrastructure も使うなら、接続プールや低水準の Driver 等、Adapter とは異なる責務がある場合だけ設ける。
+Adapter は契約への適合と変換、Infrastructure は実接続の技術機構を所有するよう定義する。
+同じ HTTP 呼び出しを両方で包むだけなら一つにまとめる。
+入力 Adapter が出力 Adapter を直接呼ぶ構成にせず、Application を経由して役割を分離する。
+HTTP は通信方式、Gateway は外部接続の役割、Port は内側の契約なので、この表の層名の代用として並べない。
 
-Before implementation, verify that:
+文書に Presentation / Infrastructure、会話に Adapter 案が残る場合は、前者の決定日と後者の承認状態、実装を照合する。
+未承認の案を採用済みに書き換えず、変更対象でなければ既存配置を維持したうえで未決論点として報告する。
 
-- The feature owns one coherent capability and its public contract is named.
-- Each new file has a feature, layer, and role directory.
-- The domain has no framework or I/O dependency, and the application has no concrete infrastructure dependency.
-- External effects cross an adapter, port, or explicit contract.
-- Shared concepts have an owner; reuse does not conceal a feature dependency.
-- Tests exercise behavior at the feature boundary and contracts at integration seams.
-- The design distinguishes an additive feature from a deliberate migration/refactor.
+## 機能設計と検証
 
-When updating an existing specification, preserve the current placement unless migration is in scope. State the exception, its reason, and the target boundary for every new element.
+1. 機能をソースルート直下に置く。たとえば `src/Hosting/Application/UseCase/CreateHosting` と `src/Hosting/Domain/Model/Hosting`。役割は `UseCase`、`Port`、`Handler`、`Mapper` 等の単数形にする。
+2. 機能ごとのデータ所有、UseCase の入力と結果、トランザクション、外部失敗とリトライの責務を定める。必要な場合に冪等性やイベント契約を設計する。
+3. 機能間では明示的な契約を用い、他機能の境界実装を import しない。共有は所有者が明確で複数機能が実際に使う安定した概念に限る。
+4. 共通資料の生成方向に沿って、Backend の HTTP スキーマから OpenAPI を生成し、固定した成果物で利用側を更新する。旧クライアントを含む互換性を検証する。
+5. 業務不変条件、差し替えた Port に対する UseCase、HTTP の正常応答と不正入力、永続化や外部接続の変換と失敗を実装済みの範囲で確認する。
+
+成果物には責務表、静的依存、公開契約、採用した命名と理由、未決の設計判断、実際に実行した検証を含める。
+空の層や予約 CI を作って実装済みと表現しない。
