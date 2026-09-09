@@ -1,0 +1,4 @@
+interface:
+  display_name: "Graphify"
+  short_description: "コードと文書を横断する知識グラフを構築し、出典と関係を探索します。"
+  default_prompt: "$graphify を使い、src と docs の関係を知識グラフにしてください。外部 API は使わず、このタスク内で文書を分析してください。"

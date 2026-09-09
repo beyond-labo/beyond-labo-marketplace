@@ -1,0 +1,4 @@
+interface:
+  display_name: "Archify"
+  short_description: "システム構成や処理の流れを、検証可能な JSON と単体 HTML の図にします。"
+  default_prompt: "$archify を使い、このリポジトリの主要コンポーネントとリクエスト経路を日本語の図にしてください。"

@@ -1,0 +1,20 @@
+{
+  "name": "graphify",
+  "version": "0.1.0",
+  "description": "コードと文書を横断する知識グラフを構築し、出典と関係を探索します。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Graphify",
+    "shortDescription": "コードと文書を横断する知識グラフを構築し、出典と関係を探索します。",
+    "longDescription": "コードと文書を横断する知識グラフを構築し、出典と関係を探索します。 公式 CLI を使う SKILL と初回セットアップ手順を提供します。実行環境は別途導入します。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$graphify を使い、src と docs の関係を知識グラフにしてください。外部 API は使わず、このタスク内で文書を分析してください。"
+    ]
+  }
+}
