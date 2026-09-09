@@ -10,6 +10,13 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 - [Git & GitHub Workflow](docs/plugins/git-gh-authentication.md)：ブランチ操作、GitHub CLI 認証、PR 作成を安全に進めます。
 - [対話・コミュニケーション](docs/plugins/communication-writing.md)：日本語の技術文書と説明文を推敲します。
 
+- [Archify](docs/plugins/archify.md)：システム構成や処理の流れを、検証可能な JSON と単体 HTML の図にします。
+- [Graphify](docs/plugins/graphify.md)：コードと文書を横断する知識グラフを構築し、出典と関係を探索します。
+- [CodeGraph](docs/plugins/codegraph.md)：ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。
+
+3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
+各ツールの実行環境はプラグインと別に準備します。
+
 ## インストール
 
 Codex アプリの画面からマーケットプレイスを追加する手順は、[インストールガイド](docs/install.html) を参照してください。

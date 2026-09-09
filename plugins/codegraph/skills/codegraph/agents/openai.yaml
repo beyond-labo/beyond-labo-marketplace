@@ -1,0 +1,4 @@
+interface:
+  display_name: "CodeGraph"
+  short_description: "ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。"
+  default_prompt: "$codegraph を使い、このリポジトリの認証処理の呼び出し元と変更影響、確認すべきテストを調べてください。"

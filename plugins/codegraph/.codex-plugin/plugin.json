@@ -1,0 +1,20 @@
+{
+  "name": "codegraph",
+  "version": "0.1.0",
+  "description": "ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CodeGraph",
+    "shortDescription": "ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。",
+    "longDescription": "ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。 公式 CLI を使う SKILL と初回セットアップ手順を提供します。実行環境は別途導入します。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$codegraph を使い、このリポジトリの認証処理の呼び出し元と変更影響、確認すべきテストを調べてください。"
+    ]
+  }
+}

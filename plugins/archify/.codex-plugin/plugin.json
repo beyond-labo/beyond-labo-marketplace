@@ -1,0 +1,20 @@
+{
+  "name": "archify",
+  "version": "0.1.0",
+  "description": "システム構成や処理の流れを、検証可能な JSON と単体 HTML の図にします。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Archify",
+    "shortDescription": "システム構成や処理の流れを、検証可能な JSON と単体 HTML の図にします。",
+    "longDescription": "システム構成や処理の流れを、検証可能な JSON と単体 HTML の図にします。 公式 CLI を使う SKILL と初回セットアップ手順を提供します。実行環境は別途導入します。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$archify を使い、このリポジトリの主要コンポーネントとリクエスト経路を日本語の図にしてください。"
+    ]
+  }
+}
