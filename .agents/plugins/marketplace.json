@@ -75,6 +75,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "DeveloperTools"
+    },
+    {
+      "name": "okf-sdd",
+      "source": {
+        "source": "local",
+        "path": "./plugins/okf-sdd"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DeveloperTools"
     }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-init"
+  short_description: ".kiro に新しい機能仕様の制御 JSON と要件の雛形を作る。既存仕様の更新には sync を使う。"
+  default_prompt: "$kiro-spec-init を使い、依頼範囲の成果物と必要な検証を進めてください。"

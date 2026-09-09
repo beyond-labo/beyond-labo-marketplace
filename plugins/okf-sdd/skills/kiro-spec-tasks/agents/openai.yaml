@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-tasks"
+  short_description: ".kiro の要件と設計から、依存関係と検証条件を持つ実装タスクを生成・更新する。"
+  default_prompt: "$kiro-spec-tasks を使い、依頼範囲の成果物と必要な検証を進めてください。"

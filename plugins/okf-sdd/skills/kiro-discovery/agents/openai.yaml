@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-discovery"
+  short_description: ".kiro の仕様駆動開発で、新規・既存仕様・直接実装への振り分けと brief / roadmap を作る。方針やコー"
+  default_prompt: "$kiro-discovery を使い、依頼範囲の成果物と必要な検証を進めてください。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-debug
+  short_description: .kiro の仕様駆動開発で、実装・検証失敗の原因を調べ、根拠のある修正と再検証を決める。原因不明の失敗や繰り返すレビュ
+  default_prompt: $kiro-debug を使い、依頼範囲の成果物と必要な検証を進めてください。

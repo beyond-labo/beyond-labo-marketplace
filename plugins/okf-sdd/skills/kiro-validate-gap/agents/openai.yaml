@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-validate-gap
+  short_description: .kiro の仕様駆動開発で、現行の要件と既存コードの差分を調べ、実装方針を選ぶための根拠を記録する。
+  default_prompt: $kiro-validate-gap を使い、依頼範囲の成果物と必要な検証を進めてください。

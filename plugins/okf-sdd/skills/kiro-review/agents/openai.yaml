@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-review
+  short_description: .kiro の仕様駆動開発で、実装差分を現行の承認済み仕様・責務境界・検証証拠に照らしてレビューする。実装後、修正後、タ
+  default_prompt: $kiro-review を使い、依頼範囲の成果物と必要な検証を進めてください。

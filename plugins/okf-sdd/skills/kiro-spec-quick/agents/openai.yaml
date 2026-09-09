@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-quick"
+  short_description: "単一の .kiro 仕様の要件・設計・タスクを必要な段階から連続生成する。--auto または既存の一括許可の範囲で承認"
+  default_prompt: "$kiro-spec-quick を使い、依頼範囲の成果物と必要な検証を進めてください。"

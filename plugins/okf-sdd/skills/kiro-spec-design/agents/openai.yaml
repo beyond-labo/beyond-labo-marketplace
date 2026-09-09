@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-design"
+  short_description: ".kiro の承認済み要件を設計文書と調査記録へ具体化し、工程の生成・承認状態を扱う。一般的なアーキテクチャ設計のみには"
+  default_prompt: "$kiro-spec-design を使い、依頼範囲の成果物と必要な検証を進めてください。"

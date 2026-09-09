@@ -1,0 +1,24 @@
+{
+  "name": "okf-sdd",
+  "version": "0.1.0",
+  "description": "OKF 0.2 による知識更新と .kiro の仕様駆動開発を、18の連携スキルで支援します。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "OKF + SDD",
+    "shortDescription": "現行の知識と仕様・承認・検証を保つ",
+    "longDescription": "既存仕様の本文へ根拠を統合し、要件・設計・タスク・実装の整合性を維持します。Python 検査 CLI と上書きを避けるテンプレート導入を同梱します。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "$kiro-discovery この変更の仕様範囲を整理してください。",
+      "$kiro-spec-sync --check 現行仕様と依存先を点検してください。"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-verify-completion
+  short_description: .kiro の仕様駆動開発で、タスク完了、修正成功、検証成功、機能 GO の主張を対象状態に対応する証拠と照合する。
+  default_prompt: $kiro-verify-completion を使い、依頼範囲の成果物と必要な検証を進めてください。

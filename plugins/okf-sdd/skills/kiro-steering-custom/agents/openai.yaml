@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-steering-custom
+  short_description: .kiro の仕様駆動開発で、API、テスト、セキュリティなど特定領域のプロジェクト方針を作成または更新する。
+  default_prompt: $kiro-steering-custom を使い、依頼範囲の成果物と必要な検証を進めてください。

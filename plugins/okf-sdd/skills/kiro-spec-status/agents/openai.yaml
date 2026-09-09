@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-spec-status
+  short_description: .kiro の仕様駆動開発で、仕様の生成、承認、実装進捗と文書の同期状態を読み取り専用で確認する。
+  default_prompt: $kiro-spec-status を使い、依頼範囲の成果物と必要な検証を進めてください。
