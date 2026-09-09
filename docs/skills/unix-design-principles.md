@@ -4,7 +4,10 @@
 
 ## 前提条件
 
-対象の目的、主要ユースケース、品質要件、既存の制約を共有できること。
+[System Architecture Design](../plugins/system-architecture-design.md) を導入し、対象の目的、主要ユースケース、品質要件、既存の制約を共有できること。
+
+個々の App / Backend の層配置は対応する architecture SKILL、iOS TCA の実装は [iOS TCA Development](ios-tca-development.md) が担当します。
+空の層や同形 DTO の複製を単純化とみなさず、実在する処理だけを検証します。
 
 ## プロンプト例
 

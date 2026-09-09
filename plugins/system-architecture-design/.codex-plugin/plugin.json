@@ -1,7 +1,7 @@
 {
   "name": "system-architecture-design",
-  "version": "0.1.0",
-  "description": "System and application architecture design skills for Codex.",
+  "version": "0.2.0",
+  "description": "Feature boundaries, dependency direction, naming, API contracts, and YAGNI design skills for Codex.",
   "author": {
     "name": "Beyond Labo"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "System Architecture Design",
     "shortDescription": "Design maintainable application and system boundaries.",
-    "longDescription": "Provides app architecture, backend architecture, and UNIX design-principle skills for designing and reviewing maintainable systems.",
+    "longDescription": "Provides framework-neutral app architecture, backend boundary naming, and UNIX design tradeoff skills with shared guidance on minimal implementation and independent API contracts.",
     "developerName": "Beyond Labo",
     "category": "DeveloperTools",
     "capabilities": [],

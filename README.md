@@ -14,6 +14,8 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 - [Graphify](docs/plugins/graphify.md)：コードと文書を横断する知識グラフを構築し、出典と関係を探索します。
 - [CodeGraph](docs/plugins/codegraph.md)：ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。
 
+- [iOS Development](docs/plugins/ios-development.md)：SwiftUI + TCA の実装、API 境界、依存注入と検証を進めます。
+
 3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
 各ツールの実行環境はプラグインと別に準備します。
 
@@ -40,3 +42,9 @@ Codex の「プラグイン」画面で、このリポジトリの GitHub URL �
 ## 開発者向け
 
 プラグイン、カタログ、公開ドキュメントを変更するときは、リポジトリの [運用規約](AGENTS.md) に従ってください。
+
+## 設計スキルの更新
+
+System Architecture Design 0.2.0 と iOS Development 0.1.0 の変更は、[変更履歴](docs/changelog.md)を参照してください。
+[利用例による確認](docs/architecture-examples.md)には、配置、TCA、DTO 境界と未実装構成の扱いを示しています。
+配布の正本は `plugins/` です。個人用の重複スキルとインストールキャッシュはこのリポジトリから直接変更しません。

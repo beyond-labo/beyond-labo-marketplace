@@ -1,0 +1,21 @@
+{
+  "name": "ios-development",
+  "version": "0.1.0",
+  "description": "SwiftUI and TCA feature implementation with Clean Architecture boundaries, API mapping, and testing.",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "iOS Development",
+    "shortDescription": "Build SwiftUI and TCA features with clear boundaries.",
+    "longDescription": "Provides one focused iOS skill for TCA state and effects, UseCase dependency composition, generated API mapping, version checks, TestStore, and Simulator verification.",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "SwiftUI + TCA のこの機能を設計し、必要な実装とテストを追加してください。",
+      "この iOS の DTO 変換と TCA の依存注入をレビューしてください。"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS TCA Development"
+  short_description: "Build and review SwiftUI TCA feature boundaries"
+  default_prompt: "$ios-tca-development でこの iOS 機能を設計し、既存の版に合う実装とテストを追加してください。"

@@ -1,85 +1,58 @@
 ---
 name: app-architecture-design
-description: Design or review client application architecture for a new screen, feature, flow, or refactor. Use for feature-first package boundaries, View/ViewModel/UseCase design, UI state and navigation ownership, Clean Architecture dependency direction, ports and adapters, and application package naming.
+description: Design or review framework-neutral client application boundaries, UI state ownership, navigation, use cases, and dependency direction. Use for cross-platform architecture decisions; use ios-tca-development for SwiftUI + TCA implementation, API mapping, and TestStore workflows, and backend-architecture-design for server boundaries.
 ---
 
 # App Architecture Design
 
-Design a client application so its UI state, feature ownership, dependency direction, and platform boundaries remain clear as it evolves. Apply this skill to frontend, mobile, desktop, and other user-facing application code; use `backend-architecture-design` for server-side APIs and services.
+クライアントの機能所有、UI 状態、依存方向を設計する。
+具体的なフレームワークの実装手順を扱う専用スキルがある場合、その API とテスト手順は専用スキルに委ねる。
 
-## Workflow
+## 設計の進め方
 
-1. Read the repository's local architecture, package, and UI-framework guidance before proposing a structure. Treat local rules as more specific than this skill.
-2. Identify the smallest user-facing feature that can change and be tested independently. Make its screen contract, UI state, user actions, use cases, navigation boundary, and external effects explicit.
-3. Use the feature as the package root. Keep its layers inside the feature rather than distributing new code by technical type across the application.
-4. Place each component by its dependency and responsibility, then select a name and role directory that reveal both.
-5. Record the feature boundary, layer/role placement, cross-feature contracts, UI-state ownership, and intentional exceptions in the design or specification.
-6. Review imports, state ownership, composition, tests, and public contracts before implementation.
+1. ローカル規約と既存 UI の状態管理方式を読み、[共通の配置、責務、契約](../../references/architecture-boundaries.md)を適用する。
+2. 独立して変更と検証ができる最小の機能について、画面契約、ユーザー操作、状態の所有者、UseCase、外部作用を特定する。
+3. 機能をソースルート直下に置き、実在する責務だけを `<Feature>/<Layer>/<Role>` に割り当てる。
+4. 静的依存と実行時の流れ、機能間の契約、ナビゲーション、Composition の配線を示す。
+5. 既存配置からの移行を伴う変更と機能追加を区別し、実施した検証と未決の判断を報告する。
 
-## Boundaries and dependency direction
+## 状態と依存の所有
 
-Use these conceptual layers when they fit the application:
-
-| Layer | Owns | May depend on |
+| 領域 | 責務 | 静的な依存先 |
 | --- | --- | --- |
-| Domain | business concepts, invariants, policies, value types | no UI framework or external SDK |
-| Application | use cases, orchestration, input/output types, ports | domain abstractions |
-| Infrastructure | storage, network clients, SDKs, providers, port implementations | application/domain contracts |
-| Presentation | views, view models, UI state, UI mappers, platform controllers | application APIs and platform UI APIs |
-| Composition | dependency wiring, root navigation registration | all layers; no business rules |
+| Domain | 業務概念と不変条件 | 通常の言語型。UI や外部 SDK を知らない |
+| Application | UseCase、業務操作の調整、呼び出し側の Port | Domain |
+| Infrastructure | 通信や保存の Adapter と境界変換 | Application / Domain の契約 |
+| Presentation | View、表示状態と表示ロジック、ナビゲーション、UI の操作 | Application と UI フレームワーク |
+| Composition | Adapter と UseCase と画面の組み立て | 必要な各実装 |
 
-Distinguish runtime flow from static imports.
+上の名前はクライアント向けの配置例であり、唯一の Clean Architecture の層名ではない。
+Presentation の状態所有者は採用方式に合わせる。
+MVVM なら ViewModel、Reducer 方式なら State / Action / Reducer / Store が担い、両方式を機械的に重ねない。
+フレームワークが必要とする場合だけ Controller を用意する。
 
-- Runtime flow is normally `View -> (platform controller) -> ViewModel -> UseCase -> Port -> Adapter -> Store / external API`.
-- Static imports flow toward stable abstractions: `presentation -> application -> domain`, `infrastructure -> application/domain`, and `composition -> all layers`.
-- A platform controller is optional. Use it only for a framework-required lifecycle, navigation, or platform API boundary; state-driven Views may bind directly to a ViewModel.
+実行は `View → 表示ロジック → UseCase → Port の実装 → 外部システム` として説明する。
+Reducer 方式の非同期処理なら Effect 等を介す。
+静的依存は `Presentation → Application → Domain`、`Infrastructure → Application / Domain` とし、Composition が具体的実装を注入する。
+View、表示ロジック、UseCase から具体的な HTTP Client や Repository を構築しない。
 
-Let Composition inject concrete adapters into use cases and view models. Do not construct a concrete Adapter, repository, store, HTTP client, or SDK client from a ViewModel, UseCase, or Domain component. Define a Port where its caller needs the abstraction—normally Application, or Domain when the domain truly owns the capability—and implement it in Infrastructure.
+Domain と Application に UI、画面状態、ナビゲーション、生成 API 型、具体的 SDK を import しない。
+表示用の整形や画面寿命に伴うキャンセルは Presentation、業務上の判断は Application / Domain が所有する。
+機能間の通信は明示的な結果や操作の契約を介し、他機能の Presentation / Infrastructure 実装を直接参照しない。
 
-Do not make Domain or Application import a UI framework, View type, screen state, navigation API, browser API, database driver, network client, or provider SDK. Do not put business rules in a View, platform controller, or navigation callback.
+## 配置の例とレビュー
 
-Use an explicit contract when features communicate. Do not import another feature's Presentation or Infrastructure implementation. Move code to a shared kernel only when it is a stable, owned application/domain contract used by multiple features; do not create `common`, `shared`, `lib`, or utility dumping grounds for convenience.
-
-## Package and naming design
-
-For new feature work, use this shape and omit only layers that have no responsibility:
-
-```text
-src/<feature-name>/<clean-architecture-layer>/<role-name>/<type>
-```
-
-For example:
+以下は実際に責務がある場合の配置候補であり、生成すべきファイル一覧ではない。
 
 ```text
-src/Matching/Presentation/View/MatchingMainView
-src/Matching/Presentation/ViewModel/MatchingMainViewModel
-src/Matching/Presentation/Mapper/MatchingMainUiMapper
-src/Matching/Application/UseCase/FindAvailableMatches
-src/Matching/Application/Port/MatchingRepository
-src/Matching/Domain/Model/Availability
-src/Matching/Domain/Service/MatchingPolicy
-src/Matching/Infrastructure/Adapter/FirestoreMatchingRepository
-src/Matching/Infrastructure/Store/FirestoreMatchingStore
-src/Matching/Composition/Factory/MatchingFeatureFactory
+src/Hosting/Presentation/View/HostingView
+src/Hosting/Application/UseCase/CreateHosting
+src/Hosting/Application/Port/HostingRepository
+src/Hosting/Domain/Model/Hosting
+src/Hosting/Infrastructure/Adapter/HostingAPIAdapter
+src/App/Composition/BuildApp
 ```
 
-Use role directories even when they initially contain one component, unless the design documents why an exception improves discoverability. Use names that expose both responsibility and layer role: `*View`, `*ViewModel`, `*UiState`, `*Controller`, `*Mapper`, `*UseCase`, `*Port`, `*Policy`, `*Adapter`, `*Repository`, `*Store`, `*Client`, and `*Factory`. Avoid catch-all names such as `Manager`, `Helper`, `Util`, and generic `Processor`.
-
-A Repository is a feature-facing persistence/data-access abstraction or its implementation; an Adapter translates between a Port and an external system; a Store is a lower-level persistence, cache, or transport mechanism. Do not use the names interchangeably merely because they all access data.
-
-## Design checks
-
-Before implementation, verify that:
-
-- The feature owns one coherent user-facing capability, screen/flow contract, and UI state.
-- Each new type has a feature, layer, and role directory matching `<Feature>/<Layer>/<Role>/<Type>`.
-- A View delegates actions and rendering state; its ViewModel owns presentation state; a UseCase owns application orchestration.
-- A ViewModel calls a UseCase rather than a Repository, Store, HTTP client, database, or SDK directly.
-- Domain has no framework or I/O dependency, and Application has no concrete Infrastructure dependency.
-- External effects cross a Port and Adapter or another explicit contract; Composition performs the concrete wiring.
-- Navigation and platform lifecycle code remain at Presentation/Composition boundaries and do not contain business decisions.
-- Shared concepts have an owner; reuse does not conceal a feature dependency or create a cycle.
-- Tests cover user-visible behavior at the Presentation/Application boundary and contracts at Infrastructure seams.
-- The design distinguishes an additive feature from a deliberate migration or refactor.
-
-When updating an existing application, preserve current placement unless migration is in scope. State the exception, its reason, and the target boundary for every new element; use a mapper or anti-corruption adapter at a legacy boundary rather than widening an incorrect dependency.
+レビューでは、状態の二重所有、View への業務処理の混入、生成型の漏出、内部型のアプリ間共有、形式だけの Mapper / Repository ラッパーを確認する。
+UI 状態と操作、UseCase の成功と失敗、外部契約の変換、Composition の配線を、それぞれ実装済みの範囲で検証する。
+iOS の SwiftUI + TCA では `ios-tca-development` を利用できる場合に読み、ViewModel を追加せず、その版に対応した TestStore と Simulator の手順で検証する。
