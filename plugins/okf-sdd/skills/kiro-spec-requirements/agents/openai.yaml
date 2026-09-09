@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-requirements"
+  short_description: ".kiro の機能仕様の要件と受け入れ条件を生成・更新する。一般的な文章推敲には使わない。"
+  default_prompt: "$kiro-spec-requirements を使い、依頼範囲の成果物と必要な検証を進めてください。"

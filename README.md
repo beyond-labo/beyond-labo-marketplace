@@ -14,6 +14,8 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 - [Graphify](docs/plugins/graphify.md)：コードと文書を横断する知識グラフを構築し、出典と関係を探索します。
 - [CodeGraph](docs/plugins/codegraph.md)：ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。
 
+- [OKF + SDD](docs/plugins/okf-sdd.md)：18スキルで現行の知識、仕様、承認、検証の整合を保ちます。
+
 3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
 各ツールの実行環境はプラグインと別に準備します。
 

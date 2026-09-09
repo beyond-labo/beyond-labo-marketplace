@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-validate-design
+  short_description: .kiro の仕様駆動開発で、要件、関連仕様、実装上の根拠と設計を照合し、実装へ進める品質かをレビューする。
+  default_prompt: $kiro-validate-design を使い、依頼範囲の成果物と必要な検証を進めてください。

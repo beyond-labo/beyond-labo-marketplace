@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-impl
+  short_description: .kiro の仕様駆動開発で、承認済み仕様のタスクを実装・検証し、実装で得た知見を現行仕様へ同期する。タスク指定時はその
+  default_prompt: $kiro-impl を使い、依頼範囲の成果物と必要な検証を進めてください。

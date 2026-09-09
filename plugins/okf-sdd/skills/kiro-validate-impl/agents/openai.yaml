@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-validate-impl
+  short_description: .kiro の仕様駆動開発で、実装後の機能について要件充足・設計整合・タスク間統合と検証証拠を確認する。対象タスク指定時
+  default_prompt: $kiro-validate-impl を使い、依頼範囲の成果物と必要な検証を進めてください。

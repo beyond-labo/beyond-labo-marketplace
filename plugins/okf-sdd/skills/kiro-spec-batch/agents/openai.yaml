@@ -1,0 +1,4 @@
+interface:
+  display_name: "kiro-spec-batch"
+  short_description: ".kiro の roadmap にある複数仕様を依存順に生成・更新する。仕様間レビューと共有索引の更新を統括する。"
+  default_prompt: "$kiro-spec-batch を使い、依頼範囲の成果物と必要な検証を進めてください。"

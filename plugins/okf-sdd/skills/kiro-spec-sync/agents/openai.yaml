@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-spec-sync
+  short_description: .kiro の仕様駆動開発で、要件、設計、実装、方針の変更を関連文書へ反映し、古い承認と完了状態を再評価する。文書の矛盾
+  default_prompt: $kiro-spec-sync を使い、依頼範囲の成果物と必要な検証を進めてください。

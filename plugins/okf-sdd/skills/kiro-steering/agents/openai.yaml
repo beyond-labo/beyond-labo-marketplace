@@ -1,0 +1,4 @@
+interface:
+  display_name: kiro-steering
+  short_description: .kiro の仕様駆動開発で、コードと決定の根拠をもとに、プロジェクト方針を作成または更新する。古い方針の置換と関連仕様
+  default_prompt: $kiro-steering を使い、依頼範囲の成果物と必要な検証を進めてください。
