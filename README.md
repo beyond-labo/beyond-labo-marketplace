@@ -15,6 +15,7 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 - [CodeGraph](docs/plugins/codegraph.md)：ソースコードのシンボル、呼び出し関係、変更影響とテスト候補を調べます。
 
 - [OKF + SDD](docs/plugins/okf-sdd.md)：18スキルで現行の知識、仕様、承認、検証の整合を保ちます。
+- [Marketplace Updater](docs/plugins/marketplace-updater.md)：別の作業環境で見つかった問題を、配布元のスキル改善へ反映します。
 
 3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
 各ツールの実行環境はプラグインと別に準備します。
@@ -42,3 +43,7 @@ Codex の「プラグイン」画面で、このリポジトリの GitHub URL �
 ## 開発者向け
 
 プラグイン、カタログ、公開ドキュメントを変更するときは、リポジトリの [運用規約](AGENTS.md) に従ってください。
+
+別のプロジェクトで使ったスキルを改善したい場合は、[Marketplace Updater](docs/skills/marketplace-updater.md) を利用できます。
+「今回の問題を防ぐため、対象スキル自体を改善して」と依頼すると、インストール情報から配布元を特定して修正と検証を進めます。
+PR 作成まで依頼すれば、公開に必要な操作も続けます。

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Marketplace Updater"
+  short_description: "別の作業環境で見つかった問題を配布元のスキル改善へ反映する"
+  default_prompt: "$marketplace-updater で、今回の問題が再発しないように対象スキルの配布元を改善し、検証からドラフトPR作成まで進めてください。"
+
+policy:
+  allow_implicit_invocation: true
