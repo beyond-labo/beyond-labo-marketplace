@@ -87,6 +87,18 @@
         "authentication": "ON_INSTALL"
       },
       "category": "DeveloperTools"
+    },
+    {
+      "name": "marketplace-updater",
+      "source": {
+        "source": "local",
+        "path": "./plugins/marketplace-updater"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "DeveloperTools"
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "name": "marketplace-updater",
+  "version": "0.1.0",
+  "description": "別の作業環境で見つかった問題を、マーケットプレイス配布元のプラグインや SKILL の改善へ反映します。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Marketplace Updater",
+    "shortDescription": "別の作業環境で見つかった問題を、マーケットプレイス配布元のプラグインや SKILL の改善へ反映します。",
+    "longDescription": "別の作業環境で見つかった問題を、マーケットプレイス配布元のプラグインや SKILL の改善へ反映します。 配布元の特定、最新ソースの修正、検証、許可済みのドラフト PR 作成を進めます。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$marketplace-updater で、今回の問題が再発しないように対象スキルの配布元を改善し、検証からドラフトPR作成まで進めてください。"
+    ]
+  }
+}
