@@ -9,12 +9,14 @@ Design a client application so its UI state, feature ownership, dependency direc
 
 ## Workflow
 
-1. Read the repository's local architecture, package, and UI-framework guidance before proposing a structure. Treat local rules as more specific than this skill.
+1. Read the repository's local architecture, package, UI-framework, and test-framework guidance before proposing a structure. Treat local rules and the user's explicit technology choices as more specific than this skill.
 2. Identify the smallest user-facing feature that can change and be tested independently. Make its screen contract, UI state, user actions, use cases, navigation boundary, and external effects explicit.
 3. Use the feature as the package root. Keep its layers inside the feature rather than distributing new code by technical type across the application.
 4. Place each component by its dependency and responsibility, then select a name and role directory that reveal both.
 5. Record the feature boundary, layer/role placement, cross-feature contracts, UI-state ownership, and intentional exceptions in the design or specification.
 6. Review imports, state ownership, composition, tests, and public contracts before implementation.
+
+When changing an existing application's test architecture, inspect the current test sources, target configuration, and CI command separately. Preserve an explicitly selected test framework across generated specs, implementation, and examples. A build command or test target name does not determine the source-level framework: for example, an iOS target may keep `xcodebuild test` while its tests use Swift Testing and contain no XCTest imports. Treat a framework migration as an explicit design decision and update affected tests and validation checks together.
 
 ## Boundaries and dependency direction
 
@@ -80,6 +82,7 @@ Before implementation, verify that:
 - Navigation and platform lifecycle code remain at Presentation/Composition boundaries and do not contain business decisions.
 - Shared concepts have an owner; reuse does not conceal a feature dependency or create a cycle.
 - Tests cover user-visible behavior at the Presentation/Application boundary and contracts at Infrastructure seams.
+- The selected test framework matches repository guidance and user intent; generated examples do not silently reintroduce a replaced framework.
 - The design distinguishes an additive feature from a deliberate migration or refactor.
 
 When updating an existing application, preserve current placement unless migration is in scope. State the exception, its reason, and the target boundary for every new element; use a mapper or anti-corruption adapter at a legacy boundary rather than widening an incorrect dependency.
