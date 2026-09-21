@@ -49,6 +49,12 @@ SSH 認証を設定していない場合は、上記の HTTPS URL を入力し�
 - `system-architecture-design`
 - `git-gh-authentication`
 - `communication-writing`
+- `archify`
+- `graphify`
+- `codegraph`
+- `okf-sdd`
+- `marketplace-updater`
+- `codex-model-routing`
 
 追加した SKILL を利用する前に、新しいタスクを開始します。
 

@@ -1,0 +1,21 @@
+{
+  "name": "codex-model-routing",
+  "version": "0.1.0",
+  "description": "Codex のタスク難易度に応じて Terra、Sol、Luna、Astra を使い分けます。",
+  "author": {
+    "name": "Beyond Labo"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Model Routing",
+    "shortDescription": "難易度と役割に応じて Codex モデルを選択します。",
+    "longDescription": "通常作業、複雑なオーケストレーション、明瞭な実行タスク、高度な推論を区別し、Terra、Sol、Luna、Astra と SubAgent の構成を選びます。",
+    "developerName": "Beyond Labo",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$codex-model-routing を使い、このタスクに適した親モデルと SubAgent の構成を決めてください。",
+      "$codex-model-routing で、複雑な作業を Luna の SubAgent に委譲できる単位へ分解してください。"
+    ]
+  }
+}

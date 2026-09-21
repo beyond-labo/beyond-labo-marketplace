@@ -16,6 +16,7 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 
 - [OKF + SDD](docs/plugins/okf-sdd.md)：18スキルで現行の知識、仕様、承認、検証の整合を保ちます。
 - [Marketplace Updater](docs/plugins/marketplace-updater.md)：別の作業環境で見つかった問題を、配布元のスキル改善へ反映します。
+- [Codex Model Routing](docs/plugins/codex-model-routing.md)：タスクの難易度と役割に応じて、親モデルと SubAgent のモデル構成を選びます。
 
 3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
 各ツールの実行環境はプラグインと別に準備します。

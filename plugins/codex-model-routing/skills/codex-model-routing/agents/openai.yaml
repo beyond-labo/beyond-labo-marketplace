@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Model Routing"
+  short_description: "タスク難易度に応じて Codex モデルを選択します"
+  default_prompt: "$codex-model-routing を使い、このタスクの親モデルと SubAgent のモデル構成を決めてください。"
