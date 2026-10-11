@@ -25,6 +25,13 @@ $kiro-impl notifications 1.1 承認済みタスクを実装し、必要な検証
 レビュー合格と工程承認、仕様の同期と実装完了は別々に扱います。
 読取専用の依頼では本文・承認・索引を書き換えません。
 
+## 実装後の旧仕様の整理
+
+実装完了前の同期では、変更が置換した旧 feature も確認します。
+失効した要件・設計・タスクを削除または置換し、参照・承認・索引を更新します。
+有効な未実装要件は保持し、削除・保持の理由を完了報告へ含めます。
+詳しくは [同期スキル](kiro-spec-sync.md) を参照してください。
+
 ## 正本
 
 [SKILL.md](https://github.com/beyond-labo/beyond-labo-marketplace/blob/main/plugins/okf-sdd/skills/kiro-impl/SKILL.md)
