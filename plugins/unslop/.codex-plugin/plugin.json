@@ -1,0 +1,24 @@
+{
+  "name": "unslop",
+  "version": "0.1.0",
+  "description": "Web と iOS の UI を監査し、製品らしい見た目へ整えます。",
+  "author": {
+    "name": "Damir Sokolovsky",
+    "url": "https://github.com/heydamir"
+  },
+  "homepage": "https://beyond-labo.github.io/beyond-labo-marketplace/plugins/unslop.html",
+  "repository": "https://github.com/beyond-labo/beyond-labo-marketplace",
+  "license": "CC-BY-4.0",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Unslop",
+    "shortDescription": "Web と iOS の UI を監査し、製品らしい見た目へ整えます。",
+    "longDescription": "Damir Sokolovsky の unslop を取り込み、Codex 向けの導線と iOS の適用手順を追加した Beyond Labo 版です。Web の参照資料、スナップショットと動画の任意スクリプトを同梱します。",
+    "developerName": "Beyond Labo",
+    "category": "DeveloperTools",
+    "capabilities": [],
+    "defaultPrompt": [
+      "$unslop を使い、この画面を監査し、製品の方針と既存の許可に沿って見た目を改善してください。"
+    ]
+  }
+}

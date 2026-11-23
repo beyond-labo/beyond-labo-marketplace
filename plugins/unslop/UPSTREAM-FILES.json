@@ -1,0 +1,106 @@
+{
+  "repository": "https://github.com/heydamir/unslop",
+  "commit": "620163eedb3529d9cd23a3994ed8d287d06f760d",
+  "files": {
+    "CITATION.cff": {
+      "upstreamSha256": "05a1d33a8c94660a6240afa2adf2e0331abeccf178bf00827b8ebd7a4796fb11",
+      "status": "unchanged"
+    },
+    "LICENSE": {
+      "upstreamSha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "status": "modified"
+    },
+    "examples/assets/blob.webp": {
+      "upstreamSha256": "eb1e1e40c5a26ec64f9e518c91cd1f111e7b2946d3042f3b956ab2c128b576b1",
+      "status": "unchanged"
+    },
+    "examples/dashboard.html": {
+      "upstreamSha256": "063e4ada46ce0fe878f555556f2cfbc6f28c9b97d7cee326e002a86b5bdcb8bc",
+      "status": "unchanged"
+    },
+    "examples/hero.html": {
+      "upstreamSha256": "3d28548e44b928ba13704e44251f334e93cc4224a090ae865f4c69b868b95d08",
+      "status": "unchanged"
+    },
+    "examples/store.html": {
+      "upstreamSha256": "aafbf29524a26f5b259c5009206f97287b75478793393bff7cccc04800ac2bb1",
+      "status": "unchanged"
+    },
+    "skills/unslop/SKILL.md": {
+      "upstreamSha256": "54e74d73afedb70dd556495f03a13ab7a5724b948cad20c3c7452684f3cb65e9",
+      "status": "modified"
+    },
+    "skills/unslop/agents/openai.yaml": {
+      "upstreamSha256": "170d0b33a418d9d82beb7d15f8a91e314adef2edf53a81c37155b6f40dd52f06",
+      "status": "modified"
+    },
+    "skills/unslop/references/effects.md": {
+      "upstreamSha256": "ded4f679e22843a8f68860e6cda0396fa8b8fa27202400e08337143b485c86a4",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs/beacon-engraving.webp": {
+      "upstreamSha256": "44e7680e9c944f03c8fe45df999bdf74077a106925a8189eebf89e751e306e5b",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs/meadow-3d.webp": {
+      "upstreamSha256": "84f526b68021a06fc6d32f162406fab6cc8074da1ef76d2ae4530e1b58219b14",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs/story-dashboard-frames.webp": {
+      "upstreamSha256": "cfbf837e40b7626d5a5789dbce54f5c197aab303aa350d13a042048310717137",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs/unslop-dashboard-after.webp": {
+      "upstreamSha256": "48067794f86b43dab20515b3810f245d67bff05d10bfa83c0f5885bee93cea52",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs/unslop-hero-after.webp": {
+      "upstreamSha256": "92b2d796c5b6116a2039f5ca2b0f3edf700c92b41846b11b9501a4e32f72af6e",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/refs.md": {
+      "upstreamSha256": "12a70ce17d574914ea69eb0809e5a9605de044df1b66619159c6d0b38d6b8353",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/rtl.md": {
+      "upstreamSha256": "d33ad69324e2b7c27107185f3fc99e50ba0f7f81b7c67c4e4f53e59cd5802be4",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/signs.md": {
+      "upstreamSha256": "ed051b2ed17758145ff5563a3b20fbc9203380f882130b1f25bf6c2e22b69120",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/tokens.md": {
+      "upstreamSha256": "b8beace96055e8097ff5a788b874e290393de56eff946bc1c650cc445e8965c2",
+      "status": "unchanged"
+    },
+    "skills/unslop/references/visuals.md": {
+      "upstreamSha256": "7247da579d2d95ace1e051b867c757bd1e05aa02f3ab8dea0ead4cd4bf14d7d7",
+      "status": "unchanged"
+    },
+    "skills/unslop/scripts/snapshot.mjs": {
+      "upstreamSha256": "4b0c3639bd1c052fa1968c4bbe1b17acb5b108fd22ec70518628d9a4dbd5d6fa",
+      "status": "unchanged"
+    },
+    "skills/unslop/scripts/story-path.mjs": {
+      "upstreamSha256": "319600e594fca2f94cbfef8706b6f1c9f5151ad56d7a27e7f7d28f82f5756c9c",
+      "status": "unchanged"
+    },
+    "skills/unslop/scripts/story.mjs": {
+      "upstreamSha256": "349610ab1d829eb727b5033353e0ecc0e3272a50c6f1d9eea94b74dcc6daa517",
+      "status": "unchanged"
+    },
+    "test/snapshot.test.mjs": {
+      "upstreamSha256": "e73734ca2a7df303d6bfa79882d0b84489ed26dbd417e336b5477d98176697ac",
+      "status": "unchanged"
+    },
+    "test/story-path.test.mjs": {
+      "upstreamSha256": "3515a44cf4bb19e6b0d6cf788df71a7c93da3e34c4b85d7d91f2e0e1fdd89c69",
+      "status": "unchanged"
+    },
+    "test/story.test.mjs": {
+      "upstreamSha256": "9120f51b7d065905ae9e72136e721af43f74a9219a12f96bab65b57135dc92a7",
+      "status": "unchanged"
+    }
+  }
+}

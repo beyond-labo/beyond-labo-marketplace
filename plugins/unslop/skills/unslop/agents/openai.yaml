@@ -1,0 +1,6 @@
+interface:
+  display_name: "Unslop"
+  short_description: "Web と iOS の UI を監査し、製品らしい見た目へ整えます。"
+  default_prompt: "$unslop を使い、この画面を監査し、製品の方針と既存の許可に沿って見た目を改善してください。"
+policy:
+  allow_implicit_invocation: false
