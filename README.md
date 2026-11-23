@@ -17,6 +17,7 @@ Beyond Labo が提供する Codex プラグインと SKILL のマーケットプ
 - [OKF + SDD](docs/plugins/okf-sdd.md)：18スキルで現行の知識、仕様、承認、検証の整合を保ちます。
 - [Marketplace Updater](docs/plugins/marketplace-updater.md)：別の作業環境で見つかった問題を、配布元のスキル改善へ反映します。
 - [Codex Model Routing](docs/plugins/codex-model-routing.md)：タスクの難易度と役割に応じて、親モデルと SubAgent のモデル構成を選びます。
+- [Unslop](docs/plugins/unslop.md)：Web と iOS の既存画面を監査し、製品らしい見た目へ整えます。
 
 3ツールの分類と責務、CLI を採用した理由は[構成検討記録](docs/research/architecture-graph-tools.md)を参照してください。
 各ツールの実行環境はプラグインと別に準備します。
@@ -31,9 +32,14 @@ Codex の「プラグイン」画面で、このリポジトリの GitHub URL �
 
 ## 利用条件
 
-このリポジトリには、現時点で利用許諾を定める `LICENSE` ファイルがありません。
+`plugins/unslop/` 全体と `docs/plugins/unslop.md`、`docs/skills/unslop.md` は、[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) で配布します。
+unslop の作者は Damir Sokolovsky ([@heydamir](https://x.com/heydamir))、上流は [heydamir/unslop](https://github.com/heydamir/unslop) です。
+Beyond Labo が Codex 向けの導線と iOS 適用手順を追加しました。
+作者、出典、ライセンス、改変表示を保持してください。
+全文と免責は [LICENSE](plugins/unslop/LICENSE)、帰属と変更の範囲は [NOTICE.md](plugins/unslop/NOTICE.md) にあります。
 
-利用、複製、改変、再配布の可否を確認したい場合は、事前にリポジトリの管理者へ連絡してください。
+上記以外の部分には、現時点で利用許諾を定めるリポジトリ全体の `LICENSE` ファイルがありません。
+その部分の利用、複製、改変、再配布の可否を確認したい場合は、事前にリポジトリの管理者へ連絡してください。
 
 プラグインの利用時は、各プラグインが必要とする認証、権限、外部サービスの利用条件にも従ってください。
 
